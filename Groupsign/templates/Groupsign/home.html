@@ -1,0 +1,68 @@
+{% extends "Groupsign/base.html" %}
+{% block title %}Welcome to Django{% endblock %}
+{% block head %}Welcome to Django{% endblock %}
+{% block content %}
+
+<!---------------------------------alert verification------------------------------------------------->
+{% if messages %}
+    {% for message in messages %}
+    <div class="col-sm-12 col-md-12 col-md-offset-0">
+        {% if message.extra_tags %}
+        <div class="alert alert-danger alert-dismissable">
+        {% else %}
+        <div class="alert alert-success alert-dismissable">
+        {% endif %}
+            <a href="#" class="close" data-dismiss="alert" aria-label="close"><span class="glyphicon glyphicon glyphicon-remove"></span></a>
+            <b>{{ message }}</b>
+        </div>
+    </div>
+        </div>
+    {% endfor %}
+{% endif %}
+        <!---------------------------------------------------------------------------------------------------------------->
+<div class="col-sm-12 col-md-12 col-md-offset-0">
+    <div class="panel-group" id="accordion">
+            {% for messege in messeges %}
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h5 class="panel-title" data-toggle="tooltip" title="Click to Expand">&nbsp;&nbsp;
+                        <span class="accordion-toggle" data-toggle="collapse"  data-parent="#accordion" href="#{{ messege.id }}">
+                            {{messege.id}} : {{messege.title}}
+                        </span>
+                        </h5>
+                    </div>
+                <div id="{{ messege.id }}" class="panel-collapse collapse">
+                    <div class="panel-body">{{ messege.text }}
+                        <p style="text-align: Right; margin: 0px"><span class="badge">{{ messege.time }}</span></p>
+                    </div>
+                    <div class="panel-footer">
+                        <!------------------------Hidden Form--------------------------------->
+                        <form class="form-inline" method="post" action="/home/">{% csrf_token %}
+                            <input name="title" type="hidden" value="{{ messege.title }}">
+                            <input name="text" type="hidden" value="{{ messege.text }}">
+                            <input name="C" type="hidden" value="{{ messege.C }}">
+                            <input name="S1" type="hidden" value="{{ messege.S1 }}">
+                            <input name="S2" type="hidden" value="{{ messege.S2 }}">
+                            <input name="S3" type="hidden" value="{{ messege.S3 }}">
+                            <input name="T1" type="hidden" value="{{ messege.T1 }}">
+                            <input name="T2" type="hidden" value="{{ messege.T2 }}">
+                            <input name="T3" type="hidden" value="{{ messege.T3 }}">
+                            <span class="glyphicon glyphicon-check"></span><input type="submit" class="submitLink" value="Verify">
+                        </form>
+                        <!-------------------------------------------------------------------->
+                        C : {{ messege.C }}<br>
+                        S1: {{ messege.S1 }}<br>
+                        S2: {{ messege.S2 }}<br>
+                        S3: {{ messege.S3 }}<br>
+                        T1: {{ messege.T1 }}<br>
+                        T2: {{ messege.T2 }}<br>
+                        T3: {{ messege.T3 }}
+                    </div>
+                </div>
+                </div>
+          {% endfor %}
+            </div>
+</div>
+        <!---------------------------------------------------------------------------------------------------------------->
+
+{% endblock %}

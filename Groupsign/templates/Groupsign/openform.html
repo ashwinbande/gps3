@@ -1,0 +1,48 @@
+{% extends "Groupsign/base.html" %}
+{% block title %}Login{% endblock %}
+{% block head %}Login{% endblock %}
+{% block content %}
+<!----------alert verification------------------------------------------------->
+{% if messages %}
+    {% for message in messages %}
+        <div class="col-sm-8 col-md-8 col-md-offset-2">
+            {% if message.extra_tags %}
+            <div class="alert alert-danger alert-dismissable">
+            {% else %}
+            <div class="alert alert-success alert-dismissable">
+            {% endif %}
+                <a href="#" class="close" data-dismiss="alert" aria-label="close"><span class="glyphicon glyphicon glyphicon-remove"></span></a>
+                <b>{{ message }}</b>
+            </div>
+        </div>
+    {% endfor %}
+{% endif %}
+<!--------------------------------------------------------------------------------------------->
+
+
+<div class="col-sm-8 col-md-8 col-md-offset-2">
+    <div class="panel panel-default">
+        <div class="panel-heading"><span class="glyphicon glyphicon glyphicon-eye-open"></span><b> Open Messege </b></div>
+        <div class="panel-body">
+
+        <!----------------------------------------------------------------------------->
+            <form class="form-horizontal" method="post">{% csrf_token %}
+            {% for field in form %}
+                <div class="form-group">
+                    <label class="control-label col-sm-2">{{ field.label }}</label>
+                    <div class="col-sm-9">{{ field }}</div>
+                </div>
+            {% endfor %}
+
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-9">
+                    <button type="submit" class="btn btn-default btn-block">Submit</button>
+                    </div>
+                </div>
+            </form>
+        <!---------------------------------------------------------------------------->
+        </div>
+        <div class="panel-footer">Goto <a href="/home/"><span class="glyphicon glyphicon glyphicon-home"></span> Home</a> </div>
+    </div>
+</div>
+{% endblock %}

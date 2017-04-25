@@ -1,0 +1,10 @@
+{% extends "Groupsign/base.html" %}
+{% block title %}Registration Successful{% endblock %}
+{% block head %}
+    {% csrf_token %}
+ Registration Completed Successfully
+{% endblock %}
+{% block content %}
+    Thank you for registering.
+    <a href="/">Login</a>
+{% endblock %}

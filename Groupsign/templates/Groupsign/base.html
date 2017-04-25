@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> GRPUP SIGNATURE </title>
+	<meta charset="utf-8">
+    {% load staticfiles %}
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css'%}">
+    <!-- Optional Bootstrap theme -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css'%}">
+    <!----material design--
+    <link rel="stylesheet" type="text/css" href="{% static 'css/material.min.css'%}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">--->
+
+    <style>
+        .panel{ background-color: #fff;  }
+        .panel-group { margin-bottom: 5px;}
+        .panel-heading .accordion-toggle:after { font-family: 'Glyphicons Halflings'; content: "\e114"; float: left; color: #fff; }
+        .panel-heading .accordion-toggle.collapsed:after { content: "\e080"; }
+        .panel-body {font-size: 15px; text-align: justify;}
+        .panel-footer { background-color: #f7f7f7; font-size: 12px; padding: 05px 10px;font-family: Menlo,Monaco,Consolas,"Courier New",monospace;}
+        .panel-default>.panel-heading { background-image: none; background-color: #0084b4; color: #fff;}
+
+        .submitLink {
+            background-color: transparent;
+            text-decoration: none;
+            border: none;
+            color: blue;
+            cursor: pointer;    }
+            submitLink:focus {
+            outline: none;   }
+
+        body { background-color: #dfe3ee; padding-top: 50px; }
+        .body-part { padding: 30px 0px; text-align: justify; }
+        textarea { height: auto; text-align: justify; }
+        .badge{background-color:#0084b4 }
+
+        .navbar-default { background-color:#0084b4;   background-image: none;  border-color: #0084b4; }
+        .navbar-default .navbar-brand {  color: #fff;  }
+        .navbar-default .navbar-brand:hover {  color: #fff;  }
+
+        .navbar-default .navbar-nav>li>a { color: #fff; }
+        .navbar-default .navbar-nav>li>a:hover { color: #f7f7f7; background-color:#8b9dc3;}
+
+        .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a { color:#fff ;background-color: #8b9dc3; background-image: none;}
+        .navbar-default .navbar-nav >.active>a:hover, .navbar-default .navbar-nav >.open>a:focus {background-color: #8b9dc3; background-image: none;}
+
+        .navbar-toggle { background-color: #e8e8e8;}
+        .btn-default { background-image: none; background-color:#0084b4; color: #fff; }
+        .btn-default:hover { background-image: none; background-color:#3b5998; color: #fff; }
+
+        .alert { margin-bottom: 5px;}
+
+        /* .footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 20px;
+            background-color: gray;
+            color: #ffffff;   }
+        */
+    </style>
+
+   <!------<style>
+
+#custom-bootstrap-menu.navbar-default .navbar-brand {
+    color: rgba(34, 34, 34, 1);
+}
+#custom-bootstrap-menu.navbar-default {
+    font-size: 16px;
+    background-color: rgba(68, 68, 255, 1);
+    background: -webkit-linear-gradient(top, rgba(136, 255, 255, 1) 0%, rgba(68, 68, 255, 1) 100%);
+    background: linear-gradient(to bottom, rgba(136, 255, 255, 1) 0%, rgba(68, 68, 255, 1) 100%);
+    border-width: 1px;
+    border-radius: 6px;
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a {
+    color: rgba(102, 102, 102, 1);
+    background-color: rgba(68, 68, 255, 1);
+    background: -webkit-linear-gradient(top, rgba(136, 255, 255, 1) 0%, rgba(68, 68, 255, 1) 100%);
+    background: linear-gradient(to bottom, rgba(136, 255, 255, 1) 0%, rgba(68, 68, 255, 1) 100%);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>li>a:focus {
+    color: rgba(17, 17, 17, 1);
+    background-color: rgba(248, 248, 248, 0);
+}
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:hover,
+#custom-bootstrap-menu.navbar-default .navbar-nav>.active>a:focus {
+    color: rgba(255, 255, 255, 1);
+    background-color: rgba(0, 0, 255, 1);
+    background: -webkit-linear-gradient(top, rgba(0, 255, 255, 1) 0%, rgba(0, 0, 255, 1) 100%);
+    background: linear-gradient(to bottom, rgba(0, 255, 255, 1) 0%, rgba(0, 0, 255, 1) 100%);
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle {
+    border-color: #0000ff;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus {
+    background-color: #0000ff;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle .icon-bar {
+    background-color: #0000ff;
+}
+#custom-bootstrap-menu.navbar-default .navbar-toggle:hover .icon-bar,
+#custom-bootstrap-menu.navbar-default .navbar-toggle:focus .icon-bar {
+    background-color: #4444ff;
+}
+
+
+    </style> --->
+    <script>
+        $(document).ready(function(){ $('[data-toggle="tooltip"]').tooltip();});
+    </script>
+
+</head>
+<body>
+
+    <!-- Begin page content -->
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">GROUP SIGNATURE</a>
+        </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li {% if request.path == '/home/' %}class="active"{% endif %}><a href="/home/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                    <li {% if request.path == '/about/' %}class="active"{% endif %}><a href="/about/"><span class="glyphicon glyphicon-info-sign"></span> About</a></li>
+                    <li {% if request.path == '/verify/' %}class="active"{% endif %}><a href="/verify/"><span class="glyphicon glyphicon-check"></span> Verify</a></li>
+                    <li {% if request.path == '/revokelist/' %}class="active"{% endif %}><a href="/revokelist/"><span class="glyphicon glyphicon-ban-circle"></span> Revoke List</a></li>
+
+            <!-- Putting Dropdown Inactive
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>--->
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a style=" color: #fff; background-color:#0084b4;">Welcome <strong>{% if user.is_authenticated %}{{ user.username }}
+                                        {% else %}{{ 'Guest' }}
+                                        {% endif %}                                </strong>
+                        </a>
+                    </li>
+                {% if user.is_authenticated %}
+                    {%   if user.is_opening_manager %}
+                    <li><a href="/open/"><span class="glyphicon glyphicon glyphicon-eye-open"></span> Open Messege</a></li>
+                    {% endif %}
+                    {%   if user.is_revocation_manager %}
+                    <li><a href="/revoke/"><span class="glyphicon glyphicon glyphicon-remove-sign"></span> Revoke User</a></li>
+                    {% endif %}
+                    {% if user.sign_created %}
+                        {% if user.is_revoked %}
+                            <li><a><span class="glyphicon glyphicon glyphicon-ban-circle"></span> Revoked </a></li>
+                        {% else %}
+                            <li><a href="/newmessege/"><span class="glyphicon glyphicon glyphicon-envelope"></span> New Messege</a></li>
+                        {% endif %}
+
+                    {% else %}
+                    <li><a href="/join/"><span class="glyphicon glyphicon glyphicon-king"></span> Join</a></li>
+                    {% endif %}
+                <li><a href="/logout/"><span class="glyphicon glyphicon glyphicon-log-out"></span> LogOut</a></li>
+                {% else %}
+                <li><a href="/register/"><span class="glyphicon glyphicon glyphicon-user"></span> Register</a></li>
+                <li><a href="/login/"><span class="glyphicon glyphicon glyphicon-log-in"></span> LogIn</a></li>
+                {% endif %}
+                </ul>
+            </div><!--/.nav-collapse -->
+    </div>
+    </nav>
+
+    <div class="container">
+        <div class="body-part">
+
+        {% block content %}
+        {% endblock %}
+
+        </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    
+	<script src="{% static 'js/jquery-1.11.3.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/material.min.js'%}"></script>
+
+</body>
+</html>

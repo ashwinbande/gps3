@@ -1,0 +1,88 @@
+<form method="post" action=".">{% csrf_token %}
+    {% for field in form %}
+    <div class="fieldWrapper">
+        {{ field.errors }}
+        {{ field.label_tag }} {{ field }}
+        {% if field.help_text %}
+        <p class="help">{{ field.help_text|safe }}</p>
+        {% endif %}
+    </div>
+{% endfor %}
+
+
+ <!--- Username: <input type="text" name="username" value="" id="username" size="50" /><br />
+        Password:<input type="password" name="password" value="" id="password" size="50" /><br />
+
+         <table class="table table-striped table-hover">
+
+            </table>
+            --->
+        <INPUT type="submit" name="submit" value="Login" />
+    </form>
+
+
+username = forms.CharField(label='Username :', max_length=1024, widget=forms.CharField(attrs={'class':'form-control','placeholder': 'Enter User Name Here'}),)
+password = forms.CharField(label='Password', max_length=1024, widget=forms.PasswordInput(attrs={'class':'form-control','placeholder': 'Enter password Here'}),)
+
+
+registr
+
+<div class="form-group">
+    <form class="form-horizontal" method="post" action="."> {% csrf_token %}
+        <div class="col-xs-offset-4 col-xs-6">
+            <table class="table table-striped table-hover">
+            {{ form.as_table }}
+            </table>
+            <div class="form-group">
+                <div class="col-xs-offset-5">
+                <Input type="submit" value="Register" class="btn btn-primary">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>--->
+
+
+newmessage
+
+<div class="form-group">
+    <form class="form-horizontal" method="post" action="."> {% csrf_token %}
+        <div class="col-xs-offset-4 col-xs-6">
+            <table class="table table-striped table-hover">
+            {{ form.as_table }}
+            </table>
+            <div class="form-group">
+                <div class="col-xs-offset-5">
+                <Input type="submit" value="Register" class="btn btn-primary">
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+VERIFY
+
+<div class="container">
+        <div class="form-group">
+            <form class="form-horizontal" method="post" action="."> {% csrf_token %}
+                <div class="col-xs-offset-4 col-xs-6">
+                    <table class="table table-striped table-hover">
+                    {{ form.as_table }}
+                    </table>
+                    <div class="form-group">
+                        <div class="col-xs-offset-5">
+                        <Input type="submit" value="Verify" class="btn btn-primary">
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+footer
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+      </div>
+</footer>

@@ -1,0 +1,31 @@
+{% extends "Groupsign/base.html" %}
+{% block title %}Welcome to Django{% endblock %}
+{% block head %}Welcome to Django{% endblock %}
+{% block content %}
+
+<!--------------------------------------------------------------------------------------------->
+       <div class="col-sm-10 col-md-10 col-md-offset-1">
+        <div class="panel panel-default">
+        <div class="panel-heading"><span class="glyphicon glyphicon-remove-circle"></span><b> List Of Ai and Ei Of Revoked User</b></div>
+        <div class="panel-body">
+
+        <table class="table table-hover" style="text-align: center">
+            <thead ><tr><td>Ai</td><td>Ei</td></tr></thead>
+            <tbody>
+            {% for list in revoke_list %}
+                <tr> <td>{{ list.Ai }}</td>
+                     <td>{{ list.Ei }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+
+<!---------------------------------------------------------------------------->
+        </div>
+        <div class="panel-footer">Goto <a href="/"><span class="glyphicon glyphicon glyphicon-home"></span> Home </a></div>
+        </div>
+       </div>
+
+
+
+{% endblock %}
